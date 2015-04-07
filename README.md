@@ -16,7 +16,7 @@ None
 
 ##Setup/Usage Instructions
 
-* Each project has a readme along with the source code that tells you how to install the plugin
+* Each project includes the source code inside the "Developers.zip" file. They include a readme that tells you how to install the plugin
 
 ## License
 
@@ -24,6 +24,6 @@ That samples are licensed under the terms of the [MIT License](http://opensource
 
 ##Written by 
 
-Multiple authors - each mentioned in the project’s readme 
+Multiple authors - each mentioned in the project source’s readme 
 
 
