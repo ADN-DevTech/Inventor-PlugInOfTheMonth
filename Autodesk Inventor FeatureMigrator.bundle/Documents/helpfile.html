@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/TR/REC-html40" xml:lang="en" dir="ltr" class="js">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>AutoCAD Exchange - Inventor FeatureMigrator  Help</title>
+</head>
+<style>
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, hr, pre, code, form, fieldset, legend, input, textarea, blockquote, table, th, td {
+  padding: 0;
+  margin: 0;
+}
+a{color:#1F5397;text-decoration:none}
+body {font-family:"Arial", "Helvetica", "sans-serif";font-size:12.0px;margin:15px}
+p {font-size:12.0px;line-height:16px;padding:0px;margin:5px 0px 5px 0px}
+h1 {font-size:22.0px;height="26px"}
+.separator-line {border-bottom;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#C3C3C3}
+h2 {font-size:16.0px;line-height:18px;height:16px;margin-bottom:3px;margin-top:15px}
+h3 {font-size:14.0px;line-height:16px;height:14px;margin-bottom:3px;margin-top:15px}
+#plugin-icon{float:left;width:94px;height:94px}
+#plugin-name{margin-left:94px}
+#plugin-description{margin-left:94px;margin-top:3px;margin-bottom:40px}
+#navigation{margin-bottom:10px;clear:both}
+.nav-link-spacer {margin:0px 5px 0px 5px}
+.command {margin-top:5px;margin-bottom:3px}
+.command.icon {float:left;width:34px;height:34px}
+.command.name {font-weight:bold;padding-top:4px;margin:0px 0px 0px 34px}
+.command.description {margin:0px 0px 0px 34px}
+.versionset {margin-bottom:5px}
+.version {float:left;width:50px}
+.versioninfo-bullet {margin-left:50px}
+.screenshots {}
+.clearboth {clear:both}
+.thumbnail {float:left; width:207px;margin: 0px 20px 0px 0px}
+.caption { font-weight:bold}
+</style>
+
+<body>
+  <div id="plugin-node" class="node right-box conent-area">
+  <div class="plugin-help">
+    <div id="heading">
+	  <div id="plugin-icon"><img width=83 height=84 src="resource/FeatureMigrator80x80.png"></div>
+	  <div id="plugin-name"><h1 class="separator-line">Inventor FeatureMigrator </h1></div>
+	  <p id="plugin-description">The FeatureMigrator tool has been developed to allow Inventor users to more easily create part features from assembly features.</p>
+    </div>
+
+    <div id="navigation">
+      Getting Started<span class="nav-link-spacer">|</span>
+      <a href="#Install">Install/Uninstall</a><span class="nav-link-spacer">|</span>
+      <a href="#AdditionalInfo">Additional Information</a><span class="nav-link-spacer">|</span>
+      <a href="#Contact">Contact</a><span class="nav-link-spacer">|</span>
+      <a class="navigation-link" href="#VersionHistory">Version History</a>
+    </div>
+
+    <h2 id="GettingStarted" name="GettingStarted">Getting Started</h2>
+          <p>To launch the plug-in, use the following command(s)</p>
+              <div class="command clearboth">
+	      <div class="command icon">
+	        	          <img width=32 height=32 src="resource/FeatureMigrator.32x32.png" />
+	        	      </div>
+	      <div class="command name">
+            Feature Migrator           </div>
+	      <div class="command command-description">
+	        Launches the Feature migration process.          </div>
+        </div>
+          
+    <h3>Usage</h3>
+    Once installed, the FeatureMigrator add-in will create a new button in the “Tools” Tab of the Assembly Ribbon (an assembly document needs to be active).<br />
+<br />
+When pressing this button, the FeatureMigrator add-in will display a new browser in the Inventor Browser Pane. This browser will display only the supported features for migration in the active assembly. <br />
+At this point only the following assembly features are supported for migration:<br />
+-	ExtrudeFeature<br />
+-	HoleFeature<br />
+-	CircularPatternFeature (only patterning Extrude and Hole)<br />
+-	RectangularPatternFeature (only patterning Extrude and Hole)<br />
+See the screenshots for a more detailed description of the FeatureMigrator control:<br />
+<br />
+<B>Migrating Assembly Features to Parts</B><br />
+The user can migrate assembly features either by selecting them in the FeatureMigrator browser: by right-clicking on one or several of them, then use the “Send to Parts” commands. Features can also be directly migrated from the regular Inventor Model browser: using the context menu item added by the add-in. In that case, the context menu item will be available only if the selection contains only features and if they are all of a supported type mentioned above.<br />
+<br />
+When migrating an assembly feature to the parts, the FeatureMigrator will create a copy of the affected part documents and replace the original part by this copy for each occurrence affected by the assembly feature: an assembly feature can affect several occurrences of the same part differently, so the operation will often end up with more copies than original documents. <br />
+When creating a copy of a Part, the FeatureMigrator will use by default the name of the occurrence to generate a new file name. If a file with the same name exists on the disk, this file will be replaced by the copy automatically, unless it is referenced by an existing Inventor document: for example the generated filename is � <a href="Part1_1.ipt" title="Part1_1.ipt">Part1_1.ipt</a> ”. This file already exists at the same location and is referenced by a drawing file � <a href="Part1_1.idw" title="Part1_1.idw">Part1_1.idw</a> ”. In this situation, the FeatureMigrator will display the “File Overwrite” dialog, prompting the user for a new name to affect to the generated copied part.<br />
+<br />
+The “File Overwrite” dialog also informs about which documents are referencing the concerned part.<br />
+<br />
+<B>Feature Migration Results</B><br />
+Once the operation of migrating features is completed, the FeatureMigrator will display a dialog that provides information about the results: This first dialog is a “high-level” report of the migration. It provides the opportunity for the user to select the action to take for all the assembly features migrated {Suppress if Succeeded, Suppress always, Delete if Succeeded, Delete always or Nothing}, also for the part features that haven’t been migrated correctly {Suppress, Delete or Nothing} (Features created by the add-in can be in an invalid state in the parts for a number of reasons).<br />
+<br />
+The high-level report dialog also provides access, through “Detailed Report” button, to a much more detailed report dialog.<br />
+In this second dialog, the result of the migration of each selected assembly feature can be visualized: It provides details about the status of each part feature (and the ability to set an individual action for each feature {Suppress, Delete or Nothing}), the documents that were generated to replace the assembly occurrences affected and the documents that became unreferenced as a result of the operation (those documents can be deleted upon user selection).<br />
+<br />
+<B>Associativity Between Part & Assembly Features</B><br />
+Associativity is controlled by the browser available in the Part document, displayed by activating the command under Tools Tab -> FeatureMigrator Panel -> Controller button.<br />
+This browser will list all the existing features resulting from a migration by the tool and that are of supported type for associativity (only hole & extrude at the moment: holes & extrusions resulting from migration of a pattern won’t be supported for associativity).<br />
+The update is not automatic (upon opening the part) but has to be performed by the user: « Update from Assembly » context item.<br />
+In case the assembly file cannot be located   <a href="http://i.e." title="i.e.">i.e.</a>   location or filename has changed), a file resolution dialog will be displayed, prompting the user to find the original assembly file. If the assembly cannot be located, the features won’t be updated.<br />
+<br />
+<br />
+
+    <h3>Screenshots</h3>
+    <div class="screenshots">
+                  <div class="thumbnail">
+        <img src="resource/Screenshot#2_1.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Annotated FeatureMigrator browser. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#3_1.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Sending Assembly features to the relevant Parts. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#4_1.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">The 'File Overwrite' Form. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#5_1.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Migration Summary. </span>
+      </div>
+      <br class="clearboth"/>      <div class="thumbnail">
+        <img src="resource/Screenshot#6_1.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Detailed migration report. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#7.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Status of the various features after migration. </span>
+      </div>
+                  <br class="clearboth"/>
+    </div>
+
+    <h2 id="Install" name="Install">Installation and Uninstallation</h2>
+    You can unload the plugin without installing it by unchecking the<br />
+"Load" checkbox associated with the plugin in the Inventor Add-In Manager.<br />
+<br />
+Unchecking "Load on Startup" cause the plugin not to be loaded in future sessions of Inventor.<br />
+<br />
+To remove the plugin completely, uninstall the application via your system's Control Panel. 
+    <h2 id="AdditionalInfo" name="AdditionalInfo">Additional Information</h2>
+    The source code for this app has been provided as a Visual Studio 2008 project containing C# code (not required to run the plugin).<br />
+<br />
+(C) Copyright 2010 by Autodesk, Inc. <br />
+<br />
+Permission to use, copy, modify, and distribute this software in <br />
+object code form for any purpose and without fee is hereby granted, <br />
+provided that the above copyright notice appears in all copies and <br />
+that both that copyright notice and the limited warranty and restricted <br />
+rights notice below appear in all supporting documentation.<br />
+<br />
+AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. <br />
+AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF MERCHANTABILITY OR <br />
+FITNESS FOR A PARTICULAR USE. AUTODESK, INC. DOES NOT WARRANT THAT THE <br />
+OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED OR ERROR FREE. 
+    <h3>Known Issues</h3>
+    
+    <h2 id="Contact" name="Contact">Contact</h2>
+    This plugin was written by Philippe Leefsma.<br />
+Philippe is a Developer Consultant at Autodesk, working as part of the Autodesk Developer Network program.<br />
+<br />
+
+    <h3>Support Information</h3>
+    Email us at  <a href="mailto:labs.plugins@autodesk.com">labs.plugins@autodesk.com</a>  with feedback or requests for<br />
+enhancements.<br />
+
+    <h2 id="VersionHistory" name="VersionHistory">Version History</h2>
+          <div class="versionset">
+        <div class="version">1.0.0</div>
+        <div class="versioninfo-bullet">Original release<br />
+</div>
+      </div>
+    
+  </div>
+</div>
+</body>
+</html>

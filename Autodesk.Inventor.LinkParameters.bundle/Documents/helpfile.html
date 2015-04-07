@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/TR/REC-html40" xml:lang="en" dir="ltr" class="js">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>AutoCAD Exchange - LinkParameters Help</title>
+</head>
+<style>
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, hr, pre, code, form, fieldset, legend, input, textarea, blockquote, table, th, td {
+  padding: 0;
+  margin: 0;
+}
+a{color:#1F5397;text-decoration:none}
+body {font-family:"Arial", "Helvetica", "sans-serif";font-size:12.0px;margin:15px}
+p {font-size:12.0px;line-height:16px;padding:0px;margin:5px 0px 5px 0px}
+h1 {font-size:22.0px;height="26px"}
+.separator-line {border-bottom;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#C3C3C3}
+h2 {font-size:16.0px;line-height:18px;height:16px;margin-bottom:3px;margin-top:15px}
+h3 {font-size:14.0px;line-height:16px;height:14px;margin-bottom:3px;margin-top:15px}
+#plugin-icon{float:left;width:94px;height:94px}
+#plugin-name{margin-left:94px}
+#plugin-description{margin-left:94px;margin-top:3px;margin-bottom:40px}
+#navigation{margin-bottom:10px;clear:both}
+.nav-link-spacer {margin:0px 5px 0px 5px}
+.command {margin-top:5px;margin-bottom:3px}
+.command.icon {float:left;width:34px;height:34px}
+.command.name {font-weight:bold;padding-top:4px;margin:0px 0px 0px 34px}
+.command.description {margin:0px 0px 0px 34px}
+.versionset {margin-bottom:5px}
+.version {float:left;width:50px}
+.versioninfo-bullet {margin-left:50px}
+.screenshots {}
+.clearboth {clear:both}
+.thumbnail {float:left; width:207px;margin: 0px 20px 0px 0px}
+.caption { font-weight:bold}
+</style>
+
+<body>
+  <div id="plugin-node" class="node right-box conent-area">
+  <div class="plugin-help">
+    <div id="heading">
+	  <div id="plugin-icon"><img width=83 height=84 src="resource/Link Parameters80x80_0.png"></div>
+	  <div id="plugin-name"><h1 class="separator-line">LinkParameters</h1></div>
+	  <p id="plugin-description">LinkParameters is a tool that allows Inventor users to easily create dependencies between parameters of the various parts and sub-assemblies in the context of the top-level assembly they reside.</p>
+    </div>
+
+    <div id="navigation">
+      Getting Started<span class="nav-link-spacer">|</span>
+      <a href="#Install">Install/Uninstall</a><span class="nav-link-spacer">|</span>
+      <a href="#AdditionalInfo">Additional Information</a><span class="nav-link-spacer">|</span>
+      <a href="#Contact">Contact</a><span class="nav-link-spacer">|</span>
+      <a class="navigation-link" href="#VersionHistory">Version History</a>
+    </div>
+
+    <h2 id="GettingStarted" name="GettingStarted">Getting Started</h2>
+          <p>To launch the plug-in, use the following command(s)</p>
+              <div class="command clearboth">
+	      <div class="command icon">
+	        	          <img width=32 height=32 src="resource/Link Parameters_0.png" />
+	        	      </div>
+	      <div class="command name">
+            Link Parameters          </div>
+	      <div class="command command-description">
+	        When you run the LinkParameters command a new modeless form should be displayed, allowing you to select source and target components, then creating links between parameters from the source to the target component.          </div>
+        </div>
+          
+    <h3>Usage</h3>
+    When you run the LinkParameters command a new modeless form should be displayed, allowing you to select source and target components, then creating links between parameters from the source to the target component.<br />
+First of all you will need to specify the name of the iLogic rule which will be created in the background. This first dialog also provides you the ability to select an existing rule if any. In that case the new iLogic code will be appended to the existing rule’s code.<br />
+<br />
+Validating this dialog will display the main dialog of the tool. Using the controls on that dialog, you will be able to select source and target components. Notice that the top-level assembly can also be used as source by checking the upper-left check-box.<br />
+The mapping between source and target parameters is done by drag-n-dropping the parameters from source to target list view. By right-clicking the target mappings, they can also be suppressed through a context menu. An option to automatically map source and target parameters with the same name is also provided from this context menu.<br />
+<br />
+Further controls available on that dialog are the parameters filter, that allow you to filter parameters that are displayed through the list views and the rule creation options dialog.<br />
+<br />
+
+    <h3>Screenshots</h3>
+    <div class="screenshots">
+                  <div class="thumbnail">
+        <img src="resource/Screenshot#1_0.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">The LinkParameters command is in the slideout menu of the iLogic panel. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#2_0.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Specifying the iLogic rule name. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#3_0.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Mapping parameters between source and target using drag and drop. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#4_0.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Filtering parameters inthe view list. </span>
+      </div>
+      <br class="clearboth"/>      <div class="thumbnail">
+        <img src="resource/Screenshot#5_0.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Specifying rule behaviour. </span>
+      </div>
+            <div class="thumbnail">
+        <img src="resource/Screenshot#6_0.png" alt="" width="207" height="131"/>
+        <br />
+        <span class="caption">Example of the iLogic code generated by the LinkParameters plug-in </span>
+      </div>
+                  <br class="clearboth"/>
+    </div>
+
+    <h2 id="Install" name="Install">Installation and Uninstallation</h2>
+    You can unload the plugin without installing it by unchecking the<br />
+"Load" checkbox associated with the plugin in the Inventor Add-In Manager.<br />
+<br />
+Unchecking "Load on Startup" cause the plugin not to be loaded in future sessions of Inventor.<br />
+<br />
+To remove the plugin completely, uninstall the application via your system's Control Panel. 
+    <h2 id="AdditionalInfo" name="AdditionalInfo">Additional Information</h2>
+    The source code for this app has been provided as a Visual Studio 2008 project containing C# code (not required to run the plugin).<br />
+<br />
+(C) Copyright 2010 by Autodesk, Inc. <br />
+<br />
+Permission to use, copy, modify, and distribute this software in <br />
+object code form for any purpose and without fee is hereby granted, <br />
+provided that the above copyright notice appears in all copies and <br />
+that both that copyright notice and the limited warranty and restricted <br />
+rights notice below appear in all supporting documentation.<br />
+<br />
+AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. <br />
+AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF MERCHANTABILITY OR <br />
+FITNESS FOR A PARTICULAR USE. AUTODESK, INC. DOES NOT WARRANT THAT THE <br />
+OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED OR ERROR FREE. 
+    <h3>Known Issues</h3>
+    
+    <h2 id="Contact" name="Contact">Contact</h2>
+    This plugin was written by Jan Liska, and updated by Philippe Leefsma.<br />
+Jan works for Autodesk's Consulting group.<br />
+Philippe is a Developer Consultant at Autodesk, working as part of the Autodesk Developer Network program.<br />
+<br />
+
+    <h3>Support Information</h3>
+    Email us at  <a href="mailto:labs.plugins@autodesk.com">labs.plugins@autodesk.com</a>  with feedback or requests for<br />
+enhancements.<br />
+
+    <h2 id="VersionHistory" name="VersionHistory">Version History</h2>
+          <div class="versionset">
+        <div class="version">1.0.0</div>
+        <div class="versioninfo-bullet">Original release<br />
+</div>
+      </div>
+    
+  </div>
+</div>
+</body>
+</html>
